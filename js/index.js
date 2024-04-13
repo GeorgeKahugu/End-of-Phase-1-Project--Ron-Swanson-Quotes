@@ -2,13 +2,19 @@
 document.addEventListener("DOMContentLoaded", function(){
     const quoteElement = document.getElementById("quoteDisplay");
     const generateQuotesButton = document.getElementById("generateQuotes");
-    const likeQuoteButton=document.getElementById("likeQuote")
-
+    const likeQuoteButton=document.getElementById("likeQuote");
+    const shareButton=document.getElementById("share");
+    
     // Add Event listener for Generating Random Quotes
     generateQuotesButton.addEventListener("click", generateRandomQuote);
 
-    // Event listener added for liking a quote
+    // AddEvent listener for liking a quote
     likeQuoteButton.addEventListener("click",likeQuote);
+
+    // Add Event listener for sharing a quote
+    shareButton.addEventListener("click", share);
+
+    
 
     // function to fetch from the API
     function generateRandomQuote() {
@@ -43,6 +49,24 @@ document.addEventListener("DOMContentLoaded", function(){
             alert("No quote to like.");
         }
     }
+
+// function to share a Quote
+function share(){
+    if(navigator.share){
+        const quoteText=quoteElement.textContent.trim();
+        navigator.share({
+            title: 'Check out this quote!',
+            text:quoteText,
+        })
+        .then(()=>console.log('Shared Successfully'))
+        .catch((error)=>console.error('Error sharing:',error));
+        
+    } else {
+        alert("Web share API is not supported in this browser.")
+    }
+}
+
+share(quoteText);
 
 });
 
