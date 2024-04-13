@@ -4,17 +4,19 @@ document.addEventListener("DOMContentLoaded", function(){
     const generateQuotesButton = document.getElementById("generateQuotes");
     const likeQuoteButton=document.getElementById("likeQuote");
     const shareButton=document.getElementById("share");
+    const downloadButton=document.getElementById("download");
     
     // Add Event listener for Generating Random Quotes
     generateQuotesButton.addEventListener("click", generateRandomQuote);
 
-    // AddEvent listener for liking a quote
+    // Add Event listener for liking a quote
     likeQuoteButton.addEventListener("click",likeQuote);
 
     // Add Event listener for sharing a quote
     shareButton.addEventListener("click", share);
 
-    
+    // Event listener for downloading a quote
+    downloadButton.addEventListener("click", download);
 
     // function to fetch from the API
     function generateRandomQuote() {
@@ -67,6 +69,21 @@ function share(){
 }
 
 share(quoteText);
+
+// function for downloading a quote
+function downloadQuote(){
+    const quoteText=quoteElement.textContent.trim()
+    const blob= new Blob ([quoteText], {type:"text/plain"});
+    const URL=URL.createObjectURL(blob);
+    const a=document.createElement("a");
+    a.href=URL;
+    a.download="quote.txt";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(URL);
+
+}
 
 });
 
