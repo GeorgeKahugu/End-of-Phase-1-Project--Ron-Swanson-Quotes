@@ -1,10 +1,14 @@
-
+// DOM Content
 document.addEventListener("DOMContentLoaded", function(){
     const quoteElement = document.getElementById("quoteDisplay");
     const generateQuotesButton = document.getElementById("generateQuotes");
+    const likeQuoteButton=document.getElementById("likeQuote")
 
     // Add Event listener for Generating Random Quotes
     generateQuotesButton.addEventListener("click", generateRandomQuote);
+
+    // Event listener added for liking a quote
+    likeQuoteButton.addEventListener("click",likeQuote);
 
     // function to fetch from the API
     function generateRandomQuote() {
@@ -20,6 +24,8 @@ document.addEventListener("DOMContentLoaded", function(){
                 const quoteParagraph = document.createElement("p");
 
                 quoteParagraph.textContent = quote;
+
+             
                 quoteElement.appendChild(quoteParagraph);
             });
         })
@@ -27,4 +33,17 @@ document.addEventListener("DOMContentLoaded", function(){
             console.error('Error fetching quote:', error);
         });
     }
+
+// function to like a quote
+    function likeQuote(){
+        if (quoteElement.children.length>0){
+// else if statement
+        alert("Quote liked!" );
+        } else {
+            alert("No quote to like.");
+        }
+    }
+
 });
+
+
