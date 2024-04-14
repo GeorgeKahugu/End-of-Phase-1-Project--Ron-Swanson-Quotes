@@ -2,7 +2,7 @@
 
 ## Date : 8 April 2024
 
-### By: George Kahugu 
+### By: George Kahugu
 
 ## Description
 
@@ -22,11 +22,15 @@ This is a web API that generates, likes, shares and downloads random Quotes by R
 
     Use Gitclone to able to download the documents from Github, copy the SSH Key provided below, open your terminal & use Gitclone to paste it.
       
-         [git@github.com:GeorgeKahugu/End-of-Phase-1-Project--Ron-Swanson-Quotes.git]
+         git@github.com:GeorgeKahugu/End-of-Phase-1-Project--Ron-Swanson-Quotes.git
+
+## Running the Code
+
+    Use the live link provided below and copy it to your Web Browser, once there click on the 'Generate Quotes' button to generate random quotes, click on the 'Like Quote' button to like the random quote generated, click on the 'Share' button to share the quote and click on the 'Download' button to download the quote from your Web Browser.
 
 ## Live Link
 
-    [https://georgekahugu.github.io/End-of-Phase-1-Project--Ron-Swanson-Quotes/]
+    <https://georgekahugu.github.io/End-of-Phase-1-Project--Ron-Swanson-Quotes/>
 
 ## Technologies Used
 
@@ -39,7 +43,7 @@ This is a web API that generates, likes, shares and downloads random Quotes by R
     Incase of any query or issues with this API program feel free to reach me on; 
 
       Mattermost : george.kahugu
-      Email:[george.kahugu@student.moringaschool.com]
+      Email:[GeorgeKahugu](george.kahugu@student.moringaschool.com)
 
 ## License
 
