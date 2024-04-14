@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const whatsappShareBtn = document.getElementById("whatsappShareBtn");
         whatsappShareBtn.addEventListener('click', function() {
-            alert("Shared on WhatApp!");
+            alert("Shared on WhatsApp!");
         });
         
         const instagramShareBtn = document.getElementById("instagramShareBtn");
