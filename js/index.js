@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("No Quote to Download");
             return;
         }
-
+// URL generation for downloading a random quote in .txt format from Web Browser to Device
         const blob = new Blob([quoteText], { type: "text/plain" });
         const downloadURL = window.URL.createObjectURL(blob);
         const a = document.createElement("a");
