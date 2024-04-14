@@ -100,7 +100,5 @@ document.addEventListener("DOMContentLoaded", function () {
         window.URL.revokeObjectURL(downloadURL);
     }
 
-
-
 });
 
