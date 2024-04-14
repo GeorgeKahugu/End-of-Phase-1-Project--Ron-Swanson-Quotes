@@ -16,7 +16,7 @@ This is a web API that generates, likes, shares and downloads random Quotes by R
 
 - Access to a Web Browser
 
--Access to the URL link
+- Access to the URL link
 
 ## Installation Instruction -
 
@@ -26,11 +26,14 @@ This is a web API that generates, likes, shares and downloads random Quotes by R
 
 ## Running the Code
 
-    Use the live link provided below and copy it to your Web Browser, once there click on the 'Generate Quotes' button to generate random quotes, click on the 'Like Quote' button to like the random quote generated, click on the 'Share' button to share the quote and click on the 'Download' button to download the quote from your Web Browser.
+    1. Use the live link provided below and copy it to your Web Browser.
+    2. Click on the 'Generate Quotes' button to generate random quotes.
+    3. Click on the 'Like Quote' button to like the random quote generated.
+    4. Click on the 'Share' button to share the quote and click on the 'Download' button to download the quote from your Web Browser.
 
 ## Live Link
 
-    <https://georgekahugu.github.io/End-of-Phase-1-Project--Ron-Swanson-Quotes/>
+    https://georgekahugu.github.io/End-of-Phase-1-Project--Ron-Swanson-Quotes/
 
 ## Technologies Used
 
@@ -42,8 +45,8 @@ This is a web API that generates, likes, shares and downloads random Quotes by R
 
     Incase of any query or issues with this API program feel free to reach me on; 
 
-      Mattermost : george.kahugu
-      Email:[GeorgeKahugu](george.kahugu@student.moringaschool.com)
+      Mattermost Username : george.kahugu
+      Email:george.kahugu@student.moringaschool.com
 
 ## License
 
