@@ -35,7 +35,7 @@ This is a web API that generates, likes, shares and downloads random Quotes by R
 
     https://georgekahugu.github.io/End-of-Phase-1-Project--Ron-Swanson-Quotes/
 
-## Technologies Used
+## Languages Used
 
     HTML
     CSS
