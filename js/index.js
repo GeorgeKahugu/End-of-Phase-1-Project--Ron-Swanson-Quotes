@@ -1,10 +1,6 @@
 // DOM Content
 document.addEventListener("DOMContentLoaded", function () {
-    // Const for the 4 buttons
     const quoteElement = document.getElementById("quoteDisplay");
-   
-    
-   
 
     // Event listener for Generating Random Quotes
     const generateButton = document.getElementById("generate");
