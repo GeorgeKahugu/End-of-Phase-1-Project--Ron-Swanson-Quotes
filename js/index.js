@@ -1,4 +1,4 @@
-// DOM Content
+// DOM Content Loaded
 document.addEventListener("DOMContentLoaded", function () {
     const quoteElement = document.getElementById("quoteDisplay");
 
@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Event listener for sharing a quote
     const shareButton = document.getElementById("share");
     shareButton.addEventListener("click", share);
-
 
     //  Event listener for downloading a quote
     const quoteDownloadButton = document.getElementById("quoteDownload");
@@ -48,8 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function for sharing a quote
     function share() {
-        // Open dialog for share functionality:
 
+        // Open dialog for share functionality:
         const dialogElement = document.getElementById("dialog");
         dialogElement.style.display = "inline";
 
@@ -58,23 +57,23 @@ document.addEventListener("DOMContentLoaded", function () {
             dialogElement.style.display = "none";
         });
 
-        const facebookShareBtn = document.getElementById("faceBookShareBtn");
-        facebookShareBtn.addEventListener('click', function() {
+        const FacebookShareBtn = document.getElementById("FaceBookShareBtn");
+        FacebookShareBtn.addEventListener('click', function() {
             alert("Shared on FaceBook!");
         });
 
-        const whatsappShareBtn = document.getElementById("whatsappShareBtn");
-        whatsappShareBtn.addEventListener('click', function() {
+        const WhatsappShareBtn = document.getElementById("WhatsappShareBtn");
+        WhatsappShareBtn.addEventListener('click', function() {
             alert("Shared on WhatsApp!");
         });
         
-        const instagramShareBtn = document.getElementById("instagramShareBtn");
-        instagramShareBtn.addEventListener('click', function() {
+        const InstagramShareBtn = document.getElementById("InstagramShareBtn");
+        InstagramShareBtn.addEventListener('click', function() {
             alert("Shared on Instagram!");
         });
         
-        const xShareBtn = document.getElementById("xShareBtn");
-        xShareBtn.addEventListener('click', function() {
+        const XShareBtn = document.getElementById("XShareBtn");
+        XShareBtn.addEventListener('click', function() {
             alert("Shared on X!");
         });
 
