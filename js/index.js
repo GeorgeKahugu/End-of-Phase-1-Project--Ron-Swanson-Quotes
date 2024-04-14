@@ -2,19 +2,20 @@
 document.addEventListener("DOMContentLoaded", function(){
     // Const for the 4 buttons
     const quoteElement = document.getElementById("quoteDisplay");
-    const generateQuotesButton = document.getElementById("generateQuotes");
-    const likeQuoteButton=document.getElementById("likeQuote");
-    const shareButton=document.getElementById("share");
+    const generateButton = document.getElementById("generate");
+    const likeButton=document.getElementById("like");
+    const shareButton = document.getElementById("share");
     const quoteDownloadButton = document.getElementById("quoteDownload");
     
     // Event listener for Generating Random Quotes
-    generateQuotesButton.addEventListener("click", generateRandomQuote);
+    generateButton.addEventListener("click", generateRandomQuote);
 
     //  Event listener for liking a quote
-    likeQuoteButton.addEventListener("click",likeQuote);
+    likeButton.addEventListener("click",like);
 
-    //  Event listener for sharing a quote
-    shareButton.addEventListener("click", share);
+      // Event listener for sharing a quote
+      shareButton.addEventListener("click", share);
+
 
      //  Event listener for downloading a quote
      quoteDownloadButton.addEventListener("click", quoteDownload);
@@ -44,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
 // Create a function to like a quote
-    function likeQuote(){
+    function like(){
         if (quoteElement.children.length>0){
 
 // Build an else if statement
@@ -54,37 +55,36 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     }
 
-// Create a function to share a Quote
-function share(){
-    if(navigator.share){
-        const quoteText=quoteElement.textContent.trim();
-        navigator.share({
-            title: 'Check out this quote!',
-            text:quoteText,
-        })
-        .then(()=>console.log('Shared Successfully'))
-        .catch((error)=>console.error('Error sharing:',error));
-
-        // Else if function for broswers that do not support the API
+// Function for sharing a quote
+function share() {
+    if (navigator.share) {
+        const quoteText = quoteElement.textContent.trim();
+        if (quoteText) {
+            navigator.share({
+                title: 'Ron Swanson Quote',
+                text: quoteText,
+            })
+            .then(() => console.log('Shared successfully'))
+            .catch((error) => console.error('Error sharing:', error));
+        } else {
+            alert("No quote to share.");
+        }
     } else {
-
-    const quoteText=quoteElement.textContent.trim();
-    navigator.clipboard.writeText(quoteText)
-    .then(()=>{
-        alert('Quote copied to clipboard!');
-    }) 
-        .catch((error)=>{
-        console.error('Error copying quote:', error)
-        alert("Web share API is not supported in this browser.Quote in unable to be shared")
-        });
-
-
+        alert("Web Share API not supported in this browser.");
     }
-}    
+}
 
 // Function for downloading a quote
 function quoteDownload() {
     const quoteText = quoteElement.textContent.trim();
+
+    // IF Statement if there is no quote to Download 
+    if(quoteText===""){
+        alert("No Quote to Download");
+        return;
+    }
+       
+
     const blob = new Blob([quoteText], { type: "text/plain" });
     const downloadURL = window.URL.createObjectURL(blob);
     const a = document.createElement("a");
