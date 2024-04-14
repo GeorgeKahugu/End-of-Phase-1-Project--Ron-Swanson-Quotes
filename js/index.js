@@ -2,22 +2,25 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Const for the 4 buttons
     const quoteElement = document.getElementById("quoteDisplay");
-    const generateButton = document.getElementById("generate");
-    const likeButton = document.getElementById("like");
-    const shareButton = document.getElementById("share");
-    const quoteDownloadButton = document.getElementById("quoteDownload");
+   
+    
+   
 
     // Event listener for Generating Random Quotes
+    const generateButton = document.getElementById("generate");
     generateButton.addEventListener("click", generateRandomQuote);
 
     //  Event listener for liking a quote
+    const likeButton = document.getElementById("like");
     likeButton.addEventListener("click", like);
 
     // Event listener for sharing a quote
+    const shareButton = document.getElementById("share");
     shareButton.addEventListener("click", share);
 
 
     //  Event listener for downloading a quote
+    const quoteDownloadButton = document.getElementById("quoteDownload");
     quoteDownloadButton.addEventListener("click", quoteDownload);
 
     // Create a function to fetch from the API
@@ -25,17 +28,11 @@ document.addEventListener("DOMContentLoaded", function () {
         fetch("https://ron-swanson-quotes.herokuapp.com/v2/quotes")
             .then(response => response.json())
             .then(data => {
-
                 quoteElement.innerHTML = "";
 
-
                 data.forEach(quote => {
-
                     const quoteParagraph = document.createElement("p");
-
                     quoteParagraph.textContent = quote;
-
-
                     quoteElement.appendChild(quoteParagraph);
                 });
             })
@@ -85,8 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Shared on X!");
         });
 
-
-       
     }
 
     // Function for downloading a quote
@@ -98,7 +93,6 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("No Quote to Download");
             return;
         }
-
 
         const blob = new Blob([quoteText], { type: "text/plain" });
         const downloadURL = window.URL.createObjectURL(blob);
