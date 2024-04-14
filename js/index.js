@@ -68,7 +68,7 @@ function share(){
     }
 }
 
-share(quoteText);
+// share(quoteText);
 
 // function for downloading a quote
 function downloadQuote(){
