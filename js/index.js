@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(){
     shareButton.addEventListener("click", share);
 
     // Event listener for downloading a quote
-    downloadButton.addEventListener("click", download);
+    downloadButton.addEventListener("click", downloadQuote);
 
     // function to fetch from the API
     function generateRandomQuote() {
@@ -64,13 +64,29 @@ function share(){
         .catch((error)=>console.error('Error sharing:',error));
         
     } else {
-        alert("Web share API is not supported in this browser.")
-    }
-}
+        // Fallback for browsers without Web Share API
 
-// share(quoteText);
+    const quoteText=quoteElement.textContent.trim();
+    navigator.clipboard.writeText(quoteText)
+    .then(()=>{
+        alert('Quote copied to clipboard!');
+    }) 
+        .catch((error)=>{
+        console.error('Error copying quote:', error)
+        alert("Web share API is not supported in this browser.Quote in unable to be shared")
+        });
+
+
+    }
+}    
+
+
 
 // function for downloading a quote
+
+const URL=window.URL;
+const quoteUrl=URL.createObjectURL
+
 function downloadQuote(){
     const quoteText=quoteElement.textContent.trim()
     const blob= new Blob ([quoteText], {type:"text/plain"});
@@ -83,8 +99,8 @@ function downloadQuote(){
     document.body.removeChild(a);
     URL.revokeObjectURL(URL);
 
-}
+};
+
 
 });
-
 
