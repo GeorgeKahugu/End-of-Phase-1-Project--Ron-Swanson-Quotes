@@ -86,23 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 
-        // dialogElement.addEventListener('')
-
-        // if (navigator.share) {
-        //     const quoteText = quoteElement.textContent.trim();
-        //     if (quoteText) {
-        //         navigator.share({
-        //             title: 'Ron Swanson Quote',
-        //             text: quoteText,
-        //         })
-        //             .then(() => console.log('Shared successfully'))
-        //             .catch((error) => console.error('Error sharing:', error));
-        //     } else {
-        //         alert("No quote to share.");
-        //     }
-        // } else {
-        //     alert("Web Share API not supported in this browser.");
-        // }
+       
     }
 
     // Function for downloading a quote
